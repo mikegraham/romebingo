@@ -3,42 +3,89 @@
         <title>History of Rome bingo</title>
     </head>
     <body>
-        <table>
-        <tr>
-                <td id="square0" />
+        <h1>History of Rome Bingo</h1>
+        <table border=3>
+            <tr width="20%">
+                <td id="square0" height="100"/>
                 <td id="square1" />
                 <td id="square2" />
                 <td id="square3" />
                 <td id="square4" />
             </tr>
-            <tr>
-                <td id="square5" />
+            <tr width="20%">
+                <td id="square5" height="100"/>
                 <td id="square6" />
                 <td id="square7" />
                 <td id="square8" />
                 <td id="square9" />
             </tr>
-            <tr>
-                <td id="square10" />
+            <tr width="20%">
+                <td id="square10" height="100"/>
                 <td id="square11" />
-                <td id="free">FREE GRAIN</td>
+                <td><b><center>FREE GRAIN<center></b></td>
                 <td id="square12" />
                 <td id="square13" />
             </tr>
-            <tr>
-                <td id="square14" />
+            <tr width="20%">
+                <td id="square14" height="100"/>
                 <td id="square15" />
                 <td id="square16" />
                 <td id="square17" />
                 <td id="square18" />
             </tr>
-            <tr>
-                <td id="square19" />
+            <tr width="20%">
+                <td id="square19" height="100"/>
                 <td id="square20" />
                 <td id="square21" />
                 <td id="square22" />
                 <td id="square23" />
             </tr>
         </table>
+        <br />
+        <form><input type=button value="New Card" onClick="window.location.reload()"></form>
+        <script>
+            var squares = ["\"It was not meant to be\"",
+               "\"Not long for this world\"",
+               "\"Routed\"",
+               "No podcast next week",
+               "\"Mrs. The History of Rome\"",
+               "\"Audible, the leading provider...\"",
+               "\"Those superstitious Romans...\"",
+               "Suicide",
+               "Ancient historian cited",
+               "Stock market analogy",
+               "Latin used",
+               "Dry humor voice",
+               "Errata issued",
+               "\"No idea how to pronounce...\"",
+               "Assassination",
+               "Historical record not clear",
+               "Gibbon",
+               "Someone claims to be a god",
+               "\"Hello, and welcome to the History of Rome...\"",
+               "Declared emperor by troops",
+               "Declared emperor by senate",
+               "Purge",
+               "Illness or plague",
+               "\"The Eternal City\""
+            ];
+
+            function shuffle(array) {
+                // Fisher-Yates shuffling algorithm
+                var i = array.length;
+                while (--i){
+                    var j = Math.floor(Math.random() * (i + 1));
+                    var temp = array[i];
+                    array[i] = array[j];
+                    array[j] = temp;
+               }
+            }
+
+            shuffle(squares);
+
+            for (var i = 0; i < 24; i++) {
+                document.getElementById("square" + i).innerHTML = "<center>" + squares[i] + "</center>";
+            }
+        </script>
     </body>
 </html>
